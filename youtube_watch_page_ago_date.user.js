@@ -2,7 +2,7 @@
 // @name         YouTube - Watch page ago date
 // @namespace    https://github.com/LenAnderson/
 // @downloadURL  https://github.com/LenAnderson/YouTube-watch-page-ago-date/raw/master/youtube_watch_page_ago_date.user.js
-// @version      1.0
+// @version      1.1
 // @author       LenAnderson
 // @match        https://www.youtube.com/*
 // @grant        none
@@ -24,6 +24,9 @@
 
         if (i == 0) {
             return 'just now';
+        }
+        if (i < 3) {
+            return 'today';
         }
         return `${delta} ${periods[i]}${i==1?'':'s'} ago`;
     };
